@@ -34,13 +34,13 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "New version: $NEW_VERSION"
 
-    # - name: Build Docker image
-    #   run: |
-    #     docker build -t solaresjuan98/docker-graphql:0.0.2 .
+    - name: Build Docker image
+      run: |
+        docker build -t solaresjuan98/docker-graphql:$NEW_VERSION .
 
-    # - name: Build Docker image
-    #   run: |
-    #     docker push solaresjuan98/docker-graphql:0.0.2
+    - name: Build Docker image
+      run: |
+        docker push solaresjuan98/docker-graphql:$NEW_VERSION
 
 
     # - uses: actions/checkout@v3
